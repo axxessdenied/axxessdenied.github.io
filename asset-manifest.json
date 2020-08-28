@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/axxess-react/static/css/main.5f361e03.chunk.css",
+    "main.js": "/axxess-react/static/js/main.10f1acb7.chunk.js",
+    "main.js.map": "/axxess-react/static/js/main.10f1acb7.chunk.js.map",
+    "runtime-main.js": "/axxess-react/static/js/runtime-main.a3910d08.js",
+    "runtime-main.js.map": "/axxess-react/static/js/runtime-main.a3910d08.js.map",
+    "static/js/2.82a732e9.chunk.js": "/axxess-react/static/js/2.82a732e9.chunk.js",
+    "static/js/2.82a732e9.chunk.js.map": "/axxess-react/static/js/2.82a732e9.chunk.js.map",
+    "index.html": "/axxess-react/index.html",
+    "precache-manifest.f8857ed6a134833c2e870c8d81650197.js": "/axxess-react/precache-manifest.f8857ed6a134833c2e870c8d81650197.js",
+    "service-worker.js": "/axxess-react/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/axxess-react/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.82a732e9.chunk.js.LICENSE.txt": "/axxess-react/static/js/2.82a732e9.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/axxess-react/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a3910d08.js",
+    "static/js/2.82a732e9.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.10f1acb7.chunk.js"
+  ]
+}
