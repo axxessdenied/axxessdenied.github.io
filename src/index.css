@@ -3,13 +3,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  box-shadow: 0px 0px 10px 4px rgba(124, 17, 151, 0.541);
+  background: linear-gradient(90deg, rgb(131, 0, 76), rgb(24, 0, 90));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height:100%;
-  background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(47, 11, 146, 0.671)), url(./assets/images/galaxy_bg.jpg);
-  background-size: cover;
-  box-shadow: 0px 0px 10px 4px rgba(124, 17, 151, 0.541);
-  @include prefix(background-size, cover, webkit moz ms);
 }
 
 code {
@@ -23,7 +20,7 @@ code {
 
 .s-card-image {
   border-radius: 10px;
-  width: 300px;
+  width: 600px;
   height: 480px;
   box-shadow: 0px 0px 10px 4px rgba(124, 17, 151, 0.541);
 }
@@ -55,7 +52,13 @@ code {
 
 html {
   min-height:100%;
-  background: rgb(10, 0, 39);
+  background: linear-gradient(90deg, rgb(131, 0, 76), rgb(24, 0, 90));
+  @include prefix(background-size, cover, webkit moz ms);
+}
+
+.galaxy_bg {
+  min-height:100%;
+  background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(47, 11, 146, 0.671)), url(./assets/images/galaxy_bg.jpg);
   background-size: cover;
   @include prefix(background-size, cover, webkit moz ms);
 }
