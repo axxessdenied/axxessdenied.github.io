@@ -36,6 +36,7 @@ const shape = (
 const startPoint = [25, 25];
 const controlPoint = [300, 175];
 const endPoint = [25, 325];
+
 const path = (
     <path
         d={`
@@ -47,7 +48,19 @@ const path = (
         strokeWidth={5}
     />
 )
-  
+
+const path2 = (
+  <path
+    d={`
+      M 25,25
+      C 100,50 25,75 25,100
+      C 25,125 300,150 25,175
+    `}
+    fill="none"
+    stroke="hotpink"
+    strokeWidth={5}
+  />
+)
 
 function SVGDrawer() {
     return(
@@ -63,6 +76,7 @@ function SVGDrawer() {
             {triangle}
             {shape}
             {path}
+            {path2}
         </svg>
 )};
 

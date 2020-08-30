@@ -1,7 +1,6 @@
 import React from 'react';
 import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import Sparkles from './Sparkles';
-import SVGDrawer from './SVGDrawer';
 
 function Hero(props) {
     return(
@@ -13,9 +12,6 @@ function Hero(props) {
                         { props.subTitle && <h2 className="display-4 font-weight-light">{props.subTitle}</h2> }
                         { props.summary && <h3 className="lead font-weight-light">{props.summary}</h3> }
                     </Col>
-                </Row>
-                <Row className="justify-content-center py-5">
-                    <SVGDrawer />
                 </Row>
             </Container>
         </Jumbotron>

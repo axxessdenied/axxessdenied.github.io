@@ -1,14 +1,16 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import {Navbar, Nav, NavbarBrand} from 'react-bootstrap';
-import Helmet from 'react-helmet';
+import {Navbar, Nav} from 'react-bootstrap';
 
 import './App.css';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import SVGExperimentPage from './pages/SVGExperimentPage';
+import ProjectPage from './pages/ProjectPage';
+import CalculatorPage from './pages/CalculatorPage';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +23,11 @@ class App extends React.Component {
         { title: 'Contact', path :'/contact' },
       ],
       home: {
+        title: 'Welcome!',
+        subTitle: 'axxessdenied.net',
+        summary: 'Check out my projects!'
+      },
+      projects: {
         title: 'Welcome!',
         subTitle: 'axxessdenied.net',
         summary: 'Check out my projects!'
@@ -45,12 +52,17 @@ class App extends React.Component {
                 <Nav className="ml-auto">
                   <Link className="nav-link text-light" to="/">Home</Link>
                   <Link className="nav-link text-light" to="/about">About</Link>
+                  <Link className="nav-link text-light" to="/svgexperiment">SVG Experiment</Link>
+                  <Link className="nav-link text-light" to="/projects">SVG Experiment</Link>
                   <Link className="nav-link text-light" to="/contact">Contact</Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
             <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} summary={this.state.home.summary} />} />
             <Route path="/about" render={() => <AboutPage title={this.state.about.title} />} />
+            <Route path="/projects" render={() => <ProjectPage />} />
+            <Route path="/calculator" render={() => <CalculatorPage />} />
+            <Route path="/svgexperiment" render={() => <SVGExperimentPage />} />
             <Route path="/contact" render={() => <ContactPage title={this.state.contact.title} />} />
             <Footer />
           </Container>
