@@ -53,14 +53,15 @@ class App extends React.Component {
                   <Link className="nav-link text-light" to="/">Home</Link>
                   <Link className="nav-link text-light" to="/about">About</Link>
                   <Link className="nav-link text-light" to="/svgexperiment">SVG Experiment</Link>
-                  <Link className="nav-link text-light" to="/projects">SVG Experiment</Link>
+                  <Link className="nav-link text-light" to="/calculator">Calc</Link>
+                  <Link className="nav-link text-light" to="/projects">Projects</Link>
                   <Link className="nav-link text-light" to="/contact">Contact</Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
             <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} summary={this.state.home.summary} />} />
             <Route path="/about" render={() => <AboutPage title={this.state.about.title} />} />
-            <Route path="/projects" render={() => <ProjectPage />} />
+            <Route path="/projects" render={() => <ProjectPage title={this.state.projects.title} subTitle={this.state.projects.subTitle} summary={this.state.projects.summary} />}/>
             <Route path="/calculator" render={() => <CalculatorPage />} />
             <Route path="/svgexperiment" render={() => <SVGExperimentPage />} />
             <Route path="/contact" render={() => <ContactPage title={this.state.contact.title} />} />

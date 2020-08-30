@@ -179,6 +179,9 @@ class Bezier extends React.PureComponent {
           this.line2Node.setAttribute('y1', y);
           break;
         }
+        default: {
+          break;
+        }
       }
     }
   
