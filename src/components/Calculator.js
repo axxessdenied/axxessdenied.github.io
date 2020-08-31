@@ -1,5 +1,7 @@
 import React from 'react';
 import '../css/calculator.css';
+import isNumber from '../snippets/isNumber';
+import Big from 'big.js';
 
 class CalcButton extends React.Component {
     constructor(props) {
@@ -23,6 +25,14 @@ class CalcButton extends React.Component {
 
 
 class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: 0,
+      total: 0,
+      operator: NaN,
+    }
+  }
     renderButton(i) {
         return ( 
           <CalcButton 
@@ -32,16 +42,117 @@ class Calculator extends React.Component {
         );
     }
 
-    handleClick(i) {
+    operate() {
+      let left = Big(this.state.total);
+      let right = Big(this.state.input);
+      
+      switch(this.state.operator) {
+        case '+':
+          this.setState({
+            total: left.plus(right).toString(),
+            input: 0,
+            operator: NaN,
+          });
+          break;
+        case '-':
+          this.setState({
+            total: left.minus(right).toString(),
+            input: 0,
+            operator: NaN,
+          });
+          break;
+        case 'x':
+          this.setState({
+            total: left.times(right).toString(),
+            input: 0,
+            operator: NaN,
+          });
+          break;
+        case '÷':
+          this.setState({
+            total: left.div(right).toString(),
+            input: 0,
+            operator: NaN,
+          });
+          break;
+        case '√':
+          console.log(this.state.operator);
+          break;
+        case 'x²':
+          console.log(this.state.operator);
+          break;
+        case '1/x':
+          console.log(this.state.operator);
+          break;
+        case '%':
+          console.log(this.state.operator);
+          break;
+        default:
+          this.setState({
+            total: this.state.input,
+            input: 0,
+            operator: NaN,
+          })
+          break;
+      }
+    }
 
+    handleClick(i) {
+      switch (true) {
+        case isNumber(i):
+          this.setState({
+            input: Number.isInteger(this.state.input) ? 
+              this.state.input * 10 + i : this.state.input + i,
+          });
+          break;
+        case /[-+÷√x%=]/.test(i) || i === 'x²' || i === '1/x':
+          this.operate();
+          this.setState({
+            operator: i,
+          })
+          break;
+        case i === '.':
+          if (Number.isInteger(this.state.input))
+            this.setState({
+              input: this.state.input + i,
+            });
+          break;
+        case i === '±':
+          this.setState({
+            input: this.state.input * -1,
+          });
+          break;
+        case i === '←':
+          if (this.state.input.toString().length > 1)
+            this.setState({
+              input: this.state.input.toString().slice(0,-1),
+            });
+          break;
+        case i === 'C':
+          this.setState({
+            input: 0,
+            total: 0,
+            operator: NaN,
+          });
+          break;
+        case i === 'CE':
+          this.setState({
+            input: 0,
+          });
+          break;
+        default:
+          console.log("No operation");
+          break;
+      }
     }
 
     render() {
-        const status = 'Next player: X';
-    
+        const status = this.state.input;
+        const total = this.state.total;
         return (
           <div>
-            <div className="status">{status}</div>
+            <div className="answer text-light">Total: {total}</div>
+            <div className="status text-light">{status}</div>
             <div className="board-row">
               {this.renderButton('%')}
               {this.renderButton('CE')}
