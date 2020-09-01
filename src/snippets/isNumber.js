@@ -1,4 +1,4 @@
 const isNumber = (input) =>
-    /[0-9]+/.test(input);
+    /^\d+$/.test(input);
 
 export { isNumber as default }

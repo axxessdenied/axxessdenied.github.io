@@ -75,24 +75,43 @@ class Calculator extends React.Component {
             operator: NaN,
           });
           break;
-        case '√':
-          console.log(this.state.operator);
-          break;
-        case 'x²':
-          console.log(this.state.operator);
-          break;
-        case '1/x':
-          console.log(this.state.operator);
-          break;
-        case '%':
-          console.log(this.state.operator);
-          break;
         default:
           this.setState({
             total: this.state.input,
             input: 0,
             operator: NaN,
           })
+          break;
+      }
+    }
+
+    modify(i) {
+      let left = Big(this.state.total);
+      let right = Big(this.state.input);
+      switch(i)
+      {
+        case '√':
+          this.setState({
+            input: right.sqrt().toString(),
+          });
+          break;
+        case 'x²':
+          this.setState({
+            input: right.times(right).toString(),
+          });
+          break;
+        case '1/x':
+          let one = Big(1);
+          this.setState({
+            input: one.div(right).toString(),
+          });
+          break;
+        case '%':
+          this.setState({
+            input: left.times(right.div(100)).toString(),
+          });
+          break;
+        default:
           break;
       }
     }
@@ -105,11 +124,14 @@ class Calculator extends React.Component {
               this.state.input * 10 + i : this.state.input + i,
           });
           break;
-        case /[-+÷√x%=]/.test(i) || i === 'x²' || i === '1/x':
+        case /^[-+÷x=]$/.test(i): //operators
           this.operate();
           this.setState({
-            operator: i,
-          })
+            operator: i === '=' ? NaN : i,
+          });
+          break;
+        case /^[√%]$/.test(i) || i === 'x²' || i === '1/x': //modifiers
+          this.modify(i);
           break;
         case i === '.':
           if (Number.isInteger(this.state.input))
@@ -123,9 +145,9 @@ class Calculator extends React.Component {
           });
           break;
         case i === '←':
-          if (this.state.input.toString().length > 1)
-            this.setState({
-              input: this.state.input.toString().slice(0,-1),
+          this.setState({
+            input: this.state.input.toString().length > 1 ? 
+            this.state.input.toString().slice(0,-1) : 0,
             });
           break;
         case i === 'C':
