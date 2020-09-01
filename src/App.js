@@ -54,6 +54,7 @@ class App extends React.Component {
                   <Link className="nav-link text-light" to="/about">About</Link>
                   <Link className="nav-link text-light" to="/svgexperiment">SVG Experiment</Link>
                   <Link className="nav-link text-light" to="/calculator">Calc</Link>
+                  <Link className="nav-link text-light" to="/tasklist">Task List</Link>
                   <Link className="nav-link text-light" to="/projects">Projects</Link>
                   <Link className="nav-link text-light" to="/contact">Contact</Link>
                 </Nav>
@@ -63,6 +64,7 @@ class App extends React.Component {
             <Route path="/about" render={() => <AboutPage title={this.state.about.title} />} />
             <Route path="/projects" render={() => <ProjectPage title={this.state.projects.title} subTitle={this.state.projects.subTitle} summary={this.state.projects.summary} />}/>
             <Route path="/calculator" render={() => <CalculatorPage />} />
+            <Route path="/tasklist" render={() => <TaskListPage />} />
             <Route path="/svgexperiment" render={() => <SVGExperimentPage />} />
             <Route path="/contact" render={() => <ContactPage title={this.state.contact.title} />} />
             <Footer />
@@ -72,4 +74,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App; 
