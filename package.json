@@ -34,6 +34,7 @@
     "redux": "^4.0.5",
     "sass-loader": "^10.0.1",
     "script-loader": "^0.7.2",
+    "storybook-addon-designs": "^5.4.1",
     "style-loader": "^1.2.1",
     "styled-components": "^5.1.1",
     "webpack": "^4.44.1",
@@ -51,7 +52,8 @@
     "serve": "HTTPS=true webpack-dev-server -d --open --env=development",
     "storybook": "start-storybook -p 6006 -c .storybook --debug-webpack",
     "build-storybook": "build-storybook -c .storybook",
-    "test": "jest --config jest.config.js"
+    "test": "jest --config jest.config.js",
+    "chromatic": "npx chromatic --project-token hx8egjqxjqi"
   },
   "eslintConfig": {
     "extends": "react-app"

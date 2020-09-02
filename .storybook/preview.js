@@ -1,4 +1,5 @@
 import '../src/index.css';
+import '../src/assets/css/calculator.css';
 
 // Configures Storybook to log the actions(onArchiveTask and onPinTask) in the UI.
 export const parameters = {

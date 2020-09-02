@@ -2,14 +2,14 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from '../lib/redux';
 
-import InboxScreen from '../components/InboxScreen';
+import PureInboxScreen from '../components/InboxScreen';
 
 import './index.css';
 
 function TaskListPage() {
   return (
     <Provider store={store}>
-      <InboxScreen />
+      <PureInboxScreen />
     </Provider>
   );
 }
