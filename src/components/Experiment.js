@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Experiment() {
-    return(
-        <p>Experiment component</p>
-    );
+const Experiment = ({ children, ...rest }) => {
+    return (
+        <button className="Experiment" {...rest}>
+            {children}
+        </button>
+    )
 }
 
 export default Experiment;

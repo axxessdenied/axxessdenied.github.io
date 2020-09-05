@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Experiment from './Experiment';
 
 function Footer() {
     return(
@@ -12,7 +13,9 @@ function Footer() {
                     Niko Slusarczyk
                   </Col>
                   <Col className="p-0 d-flex justify-content-end text-light" md={3}>
-                    Made by Niko Slusarczyk. 2020
+                    <Experiment>
+                      Made by Niko Slusarczyk. 2020
+                    </Experiment>
                   </Col>
               </Row>
           </Container>
